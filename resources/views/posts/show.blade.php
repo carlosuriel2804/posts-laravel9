@@ -8,11 +8,11 @@
                 <div class="card-body">
                     <p class="card-text text-dark">{{ $post->body }}</p>
                     <div class="d-flex justify-content-end">
-                        <a href="{{route('posts.edit', $post)}}" class="btn btn-primary me-3">Edit</a>
+                        <a href="{{route('posts.edit', $post)}}" class="btn btn-primary me-3">Modificar post</a>
                         <form action="{{ route('posts.destroy', $post) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input type="submit" value="Delete" class="btn btn-danger">
+                            <input type="submit" value="Eliminar post" class="btn btn-danger">
                         </form>
                     </div>
                 </div>

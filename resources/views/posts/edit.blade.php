@@ -8,12 +8,12 @@
                 @csrf
                 @method('PATCH')
                     <div class="card-header bg-dark text-white">
-                        <input type="text" class="form-control border-0 bg-transparent text-white" name="title" value="{{ $post->title }}">
+                        <input type="text" class="form-control border-0 bg-transparent text-white" name="title" value="{{ $post->title }}" placeholder="Mi post">
                     </div>
                     <div class="card-body">
-                        <textarea class="form-control border-0 text-dark mb-3" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis auctor est, sed vehicula velit. Nulla quis pulvinar nisl. Praesent dapibus sem ac turpis congue, in blandit arcu feugiat. Donec non lacus id urna pellentesque mollis a auctor lacus. Fusce in ullamcorper neque. Curabitur vulputate nunc vitae felis sollicitudin iaculis. In pellentesque eget odio in lacinia. Suspendisse faucibus velit quis sem molestie, eu ullamcorper justo tristique. Donec varius enim vel mi iaculis vehicula.</textarea>
+                        <textarea class="form-control border-0 text-dark mb-3" name="body" rows="3" maxlength="120" placeholder="Mi post abarca ...">{{$post->body}}</textarea>
                         <div class="d-flex justify-content-end">
-                            <input type="submit" value="Update" class="btn btn-success">
+                            <input type="submit" value="Guardar cambios" class="btn btn-success">
                         </div>
                     </div>
                 </form>

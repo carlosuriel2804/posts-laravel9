@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
    public function __construct(){
-      $this->middleware('auth', ['only'=>['edit', 'update', 'destroy']]); //Puede ser only or except
+      $this->middleware('auth', ['only'=>['destroy']]); //Puede ser only or except
    }
 
    public function index()
@@ -33,7 +33,8 @@ class PostController extends Controller
    {
 
       $request->validate([
-         'title' => 'required'
+         'title' => 'required',
+         'body'=> 'required'
       ]);
 
       $post = new Post;
@@ -56,10 +57,12 @@ class PostController extends Controller
    public function update(Request $request, Post $post)
    {
       $request->validate([
-         'title' => 'required'
+         'title' => 'required',
+         'body'=> 'required'
       ]);
 
       $post->title = $request->input('title');
+      $post->body = $request->input('body');
       $post->save();
       //session()->flash('status', 'Post updated!');
       return to_route('posts.show', $post);
