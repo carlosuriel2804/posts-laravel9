@@ -1,8 +1,7 @@
 <x-layouts.app title="Home">
     <div class="container my-5">
         <h4>Modificar post</h4>
-        <p>Da click a la parte que quieras actualizar del post</p>
-        <div class="col-md-12 mb-3">
+        <div class="col-md-12 mb-3 my-5">
             <div class="card card-link">
                 <form action="{{route('posts.update', $post)}}" method="POST">
                 @csrf
