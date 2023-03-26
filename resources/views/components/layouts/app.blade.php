@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyFirstApp - {{$title ?? ''}}</title>
+    <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2016/10/10/01/49/leave-1727488_1280.png" />
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <style>
         body {
