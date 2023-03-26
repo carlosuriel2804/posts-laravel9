@@ -13,7 +13,5 @@
             </div>
             <img src="https://cdn.pixabay.com/photo/2014/03/24/17/21/newspaper-295480_1280.png" class="img-fluid" alt="..." width="18%">
         </div>
-        
-        
     </div>
 </x-layouts.app>

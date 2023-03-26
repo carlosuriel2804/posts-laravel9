@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +28,10 @@ Route::get('/blog/{post}/edit', [PostController::class, 'edit'])->name('posts.ed
 Route::patch('/blog/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
-Route::view('/login', 'login')->name('login');
+Route::view('/login', 'auth.login')->name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+Route::view('/register', 'auth.register')->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
