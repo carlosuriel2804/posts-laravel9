@@ -4,7 +4,6 @@
             <h4>Crear nuevo post</h4>
             
         </div>
-        
         <p>Completa los siguientes campos:</p>
         <div class="col-md-12 mb-3">
             <div class="card card-link">
@@ -21,7 +20,6 @@
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
 </x-layouts.app>

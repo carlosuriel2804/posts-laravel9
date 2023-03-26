@@ -1,10 +1,11 @@
 <x-layouts.app title="Preguntas frecuentes">
     <div class="container my-5">
-        <div class="row">
+        <h4>Preguntas frecuentes</h4>
+        <div class="row my-5">
             @foreach($faqs as $faq)
             <div class="bg-light mb-5 px-3 py-3 border rounded">
-                <h4>{{$faq->question}}</h4>
-                <p class="leader">{{$faq->answer}}</p>
+                <b>{{$faq->question}}</b>
+                <p class="leader my-3">{{$faq->answer}}</p>
             </div>
             @endforeach
         </div>

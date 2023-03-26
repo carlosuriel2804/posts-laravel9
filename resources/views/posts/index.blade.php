@@ -2,7 +2,12 @@
     <div class="container my-5">
         <div class="d-flex flex-row justify-content-between my-5">
             <h4>Todos los posts ({{count($posts)}})</h4>
-            <a href="{{route('posts.create')}}"><button type="button" class="btn btn-success">Crear nuevo post</button></a>
+            @auth
+            <a href="{{route('posts.create')}}"><button type="button" class="btn btn-success">Crear nuevo post</button></a>    
+            @endauth
+            @guest
+            <p>Para modificar o eliminar este post debes <a href="{{route('login')}}">iniciar sesión</a> o <a href="{{route('register')}}">registrarte</a></p>
+            @endguest
         </div>
         <div class="row">
             @foreach($posts as $post)

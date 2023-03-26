@@ -10,7 +10,7 @@ class PostController extends Controller
 {
    
    public function __construct(){
-      $this->middleware('auth', ['only'=>['destroy']]); //Puede ser only or except
+      $this->middleware('auth', ['only'=>['destroy', 'create', 'store', 'update', 'edit']]); //Puede ser only or except
    }
 
    public function index()

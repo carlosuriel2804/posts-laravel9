@@ -1,7 +1,7 @@
 <header class="d-flex justify-content-center py-3 bg-dark fixed-top">
     <ul class="nav nav-pills">
       @auth
-      <li class="nav-item"><a class="nav-link text-white">{{Auth::user()->name}}</a></li>
+      <li class="nav-item"><a class="nav-link text-white">Sesión iniciada como {{Auth::user()->name}}</a></li>
       @endauth
       <li class="nav-item"><a href="{{ route('home') }}" class="nav-link text-white">Home</a></li>
       <li class="nav-item"><a href="{{route('posts.index')}}" class="nav-link text-white">Blog</a></li>

@@ -12,7 +12,7 @@
                             <div class="flex-grow-1">
                                 <input type="text" class="form-control border-0 bg-transparent text-white" name="title" value="{{ $post->title }}" placeholder="Mi post">
                             </div>
-                            <div class="">
+                            <div class="d-flex align-items-center" style="height: 50px;">
                                 <p>{{$post->created_at}}</p>
                             </div>
                             
