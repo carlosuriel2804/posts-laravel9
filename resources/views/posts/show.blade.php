@@ -6,7 +6,7 @@
                     {{ $post->title }}
                 </div>
                 <div class="card-body">
-                    <p class="card-text text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis auctor est, sed vehicula velit. Nulla quis pulvinar nisl. Praesent dapibus sem ac turpis congue, in blandit arcu feugiat. Donec non lacus id urna pellentesque mollis a auctor lacus. Fusce in ullamcorper neque. Curabitur vulputate nunc vitae felis sollicitudin iaculis. In pellentesque eget odio in lacinia. Suspendisse faucibus velit quis sem molestie, eu ullamcorper justo tristique. Donec varius enim vel mi iaculis vehicula.</p>
+                    <p class="card-text text-dark">{{ $post->body }}</p>
                     <div class="d-flex justify-content-end">
                         <a href="{{route('posts.edit', $post)}}" class="btn btn-primary me-3">Edit</a>
                         <form action="{{ route('posts.destroy', $post) }}" method="POST">

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PostController extends Controller
+class FaqController extends Controller
 {
    public function __construct(){
       $this->middleware('auth', ['only'=>['edit', 'update', 'destroy']]); //Puede ser only or except
@@ -14,34 +14,37 @@ class PostController extends Controller
 
    public function index()
    {
-      $posts = Post::get();
+      $faqs = Faq::get();
 
-      return view('posts.index', ['posts' => $posts]);
+      return view('faqs.index', ['faqs' => $faqs]);
    }
 
-   public function show(Post $post)
+   public function show(Faq $faq)
    {
-      return view('posts.show', ['post' => $post]);
+      return view('faqs.show', ['faq' => $faq]);
    }
-
+  /*
    public function create()
    {
-      return view('posts.create');
+      return view('faqs.create');
    }
 
    public function store(Request $request)
    {
 
       $request->validate([
-         'title' => 'required'
+         'title' => 'required',
+         'body' => 'required'
       ]);
 
-      $post = new Post;
-      $post->title = $request->input('title');
-      $post->body = $request->input('body');
-      $post->save();
-      return to_route('posts.index');
+      $faq = new Faq;
+      $faq->title = $request->input('title');
+      $faq->title = $request->input('body');
+      $faq->save();
+      return to_route('faqs.index');
    }
+
+ 
    public function destroy(Post $post)
    {
       $post->delete();
@@ -64,4 +67,5 @@ class PostController extends Controller
       //session()->flash('status', 'Post updated!');
       return to_route('posts.show', $post);
    }
+   */
 }

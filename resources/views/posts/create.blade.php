@@ -10,7 +10,7 @@
                         <input type="text" class="form-control border-0 bg-transparent text-white" name="title" placeholder="My new post">
                     </div>
                     <div class="card-body">
-                        <textarea class="form-control border-0 text-dark mb-3" rows="3" placeholder="Description of my new post"></textarea>
+                        <textarea class="form-control border-0 text-dark mb-3" name="body" rows="3" placeholder="Description of my new post"></textarea>
                         <div class="d-flex justify-content-end">
                             <input type="submit" value="Save" class="btn btn-success">
                         </div>
