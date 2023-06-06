@@ -28,6 +28,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return to_route('login')->with('status', 'Sessión cerrada');
+        return to_route('home')->with('status', 'Sessión cerrada');
     }
 }

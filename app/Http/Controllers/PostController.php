@@ -42,11 +42,13 @@ class PostController extends Controller
       $post->title = $request->input('title');
       $post->body = $request->input('body');
       $post->save();
+      session()->flash('status','Post created!');
       return to_route('posts.index');
    }
    public function destroy(Post $post)
    {
       $post->delete();
+      session()->flash('status','Post deleted!');
       return to_route('posts.index');
    }
 
@@ -65,7 +67,7 @@ class PostController extends Controller
       $post->title = $request->input('title');
       $post->body = $request->input('body');
       $post->save();
-      //session()->flash('status', 'Post updated!');
+      session()->flash('status', 'Post updated!');
       return to_route('posts.show', $post);
    }
 }

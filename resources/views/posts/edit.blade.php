@@ -19,7 +19,7 @@
                         
                     </div>
                     <div class="card-body">
-                        <textarea class="form-control border-0 text-dark mb-3" name="body" rows="3" maxlength="120" placeholder="Mi post abarca ...">{{$post->body}}</textarea>
+                        <textarea class="form-control border-0 text-dark mb-3" name="body" maxlength="1000" placeholder="Mi post abarca ...">{{$post->body}}</textarea>
                         <div class="d-flex justify-content-end">
                             <input type="submit" value="Guardar cambios" class="btn btn-success">
                         </div>

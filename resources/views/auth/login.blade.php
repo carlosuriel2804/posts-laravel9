@@ -22,7 +22,6 @@
                               Recuérdame
                             </span>
                         </div>
-    
                         <div class="d-flex justify-content-end my-3">
                             <input type="submit" value="Iniciar sesión" class="btn btn-success col-12">
                         </div>
