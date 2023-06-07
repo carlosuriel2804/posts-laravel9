@@ -1,33 +1,38 @@
 <x-layouts.app title="Home">
     <div class="container my-5">
         <h4>Modificar post</h4>
+        <hr style="border-color: grey;">
+        <form action="{{route('posts.update', $post)}}" method="POST">
         <div class="col-md-12 mb-3 my-5">
-            <div class="card card-link">
-                <form action="{{route('posts.update', $post)}}" method="POST">
+                
                 @csrf
                 @method('PATCH')
-                    <div class="card-header bg-dark text-white">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div class="flex-grow-1">
-                                <input type="text" class="form-control border-0 bg-transparent text-white" name="title" value="{{ $post->title }}" placeholder="Mi post">
-                            </div>
-                            <div class="d-flex align-items-center" style="height: 50px;">
-                                <p>{{$post->created_at}}</p>
-                            </div>
-                            
+               
+                <div class="form-floating my-5">
+                    <input type="text" class="form-control" name="title" maxlength="255" placeholder="Mi nuevo post" value="{{old('title')}}">
+                    <label for="title">Título del post</label>    
+                    <small class="form-text text-muted">The character limit is 255.</small>
+                    @error('title')
+                    <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
+                        <div class="form-floating my-5">
+                            <textarea class="form-control" name="body" placeholder="Leave a comment here" maxlength="255" style="height: 200px">{{old('body')}}</textarea>
+                            <label for="body">Contenido del post</label>
+                            <small class="form-text text-muted">The character limit is 255.</small>
+                        @error('body')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
                         </div>
                         
-                    </div>
-                    <div class="card-body">
-                        <textarea class="form-control border-0 text-dark mb-3" name="body" maxlength="1000" placeholder="Mi post abarca ...">{{$post->body}}</textarea>
-                        <div class="d-flex justify-content-end">
-                            <input type="submit" value="Guardar cambios" class="btn btn-success">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            
+                
         </div>
+        
+            <hr style="border-color: grey;">
+            <div class="d-flex justify-content-end">
+                <input type="submit" value="Guardar cambios" class="btn btn-success">
+            </div>
+        </form>    
     </div>
 </x-layouts.app>
 

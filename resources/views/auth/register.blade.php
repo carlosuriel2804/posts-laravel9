@@ -8,19 +8,22 @@
                 <form action="{{route('register')}}" method="POST">
                     @csrf
     
-                        <input type="text" class="form-control my-3" name="name" placeholder="Nombre" value="{{old('name')}}" autofocus>
+                        <input type="text" class="form-control my-3" name="name" placeholder="Nombre" maxlength="255" value="{{old('name')}}" autofocus>
                         @error('name')
                             <small class="text-danger">{{$message}}</small>
                         @enderror
-                        <input type="email" class="form-control my-3" name="email" placeholder="Correo electrónico" value="{{old('email')}}"> 
-                        @error('email')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
-                        <input type="password" class="form-control my-3" name="password" placeholder="Contraseña">
-                        @error('password')
-                            <small class="text-danger">{{$message}}</small>
-                        @enderror
-                        <input type="password" class="form-control my-3" name="password_confirmation" placeholder="Repite la contraseña">
+                        <small class="form-text text-muted">The character limit for name is 255.</small>
+                        <input type="email" class="form-control my-3" name="email" placeholder="Correo electrónico" maxlength="255" value="{{old('email')}}"> 
+                        @foreach ($errors->get('email') as $error)
+                        <small class="text-danger">{{ $error }}</small>
+                        @endforeach
+                        <small class="form-text text-muted">The character limit for email is 255.</small>
+                        <input type="password" class="form-control my-3" name="password" maxlength="255" placeholder="Contraseña">
+                        @foreach ($errors->get('password') as $error)
+                        <small class="text-danger">{{ $error }}</small>
+                        @endforeach
+                        <small class="form-text text-muted">The character limit for password is 255.</small>
+                        <input type="password" class="form-control my-3" name="password_confirmation" maxlength="255" placeholder="Repite la contraseña">
                         @error('password_confirmation')
                             <small class="text-danger">{{$message}}</small>
                         @enderror

@@ -35,17 +35,37 @@
                     <div class="d-flex justify-content-end">
                         @auth
                         <a href="{{route('posts.edit', $post)}}" class="btn btn-primary me-3">Modificar post</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
+                          Eliminar post
+                        </button>
                         @endauth
-                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            @auth
-                            <input type="submit" value="Eliminar post" class="btn btn-danger">
-                            @endauth
-                        </form>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" id="confirmDeleteModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirmar eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>¿Estás seguro de que quieres eliminar este post?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  @auth
+                  <input type="submit" value="Eliminar post" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
+                  @endauth
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </x-layouts.app>

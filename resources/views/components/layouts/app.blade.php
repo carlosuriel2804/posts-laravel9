@@ -7,7 +7,10 @@
     <title>MyFirstApp - {{$title ?? ''}}</title>
     <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2016/10/10/01/49/leave-1727488_1280.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Agrega un botón que abrirá el modal -->
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <style>
         body {

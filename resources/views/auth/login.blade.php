@@ -8,11 +8,11 @@
                 <form action="{{route('login')}}" method="POST">
                     @csrf
                         
-                        <input type="email" class="form-control my-3" name="email" placeholder="Email" value="{{old('email')}}" autofocus>
+                        <input type="email" class="form-control my-3" name="email" placeholder="Email" maxlength="255" value="{{old('email')}}" autofocus>
                         @error('email')
                             <small class="text-danger">{{$message}}</small>
                         @enderror
-                        <input type="password" class="form-control my-3" name="password" placeholder="Password" value="{{old('password')}}">
+                        <input type="password" class="form-control my-3" name="password" placeholder="Password" maxlength="255" value="{{old('password')}}">
                         @error('password')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
