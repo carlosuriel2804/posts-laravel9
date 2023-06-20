@@ -9,7 +9,11 @@
                 @method('PATCH')
                
                 <div class="form-floating my-5">
-                    <input type="text" class="form-control" name="title" maxlength="255" placeholder="Mi nuevo post" value="{{old('title')}}">
+                    @php
+                        $titleValue = old('title', $post->title);
+                        $bodyValue = old('body', $post->body);
+                    @endphp
+                    <input type="text" class="form-control" name="title" maxlength="255" placeholder="Mi nuevo post" value="{{$titleValue}}">
                     <label for="title">Título del post</label>    
                     <small class="form-text text-muted">The character limit is 255.</small>
                     @error('title')
@@ -17,7 +21,7 @@
                     @enderror
                 </div>
                         <div class="form-floating my-5">
-                            <textarea class="form-control" name="body" placeholder="Leave a comment here" maxlength="255" style="height: 200px">{{old('body')}}</textarea>
+                            <textarea class="form-control" name="body" placeholder="Leave a comment here" maxlength="255" style="height: 200px">{{$bodyValue}}</textarea>
                             <label for="body">Contenido del post</label>
                             <small class="form-text text-muted">The character limit is 255.</small>
                         @error('body')
